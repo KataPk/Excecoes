@@ -1,39 +1,13 @@
+package validacoes;
+
 import Exceptions.CpfException;
 
 import java.util.InputMismatchException;
-import java.util.Scanner;
 
 public class ValidaCpf {
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        boolean invalido = true;
-        String cpf = "";
-        String estado = "";
-        while (invalido) {
-            try {
-                System.out.print("Digite seu CPF: ");
-                cpf = sc.nextLine();
 
-                System.out.print("Digite a sigla do seu Estado de nascença: ");
-                estado = sc.nextLine();
-
-                if (!cpfValidation(cpf)) {
-                    throw new CpfException("CPF invalido");
-                } else if (!stateAndCpf(cpf, estado)) {
-                    throw new CpfException("Este CPF não pertence a esse estado");
-                } else {
-                    invalido = false;
-                    System.out.println("CPF e estado validos");
-                }
-
-            } catch (CpfException e) {
-                System.out.println(e.getMessage());
-            }
-        }
-    }
-
-    public static boolean cpfValidation(String cpf) {
+    public boolean cpfValidation(String cpf) {
 
         cpf = cpf.replace(".", "");
         cpf = cpf.replace("-", "");
@@ -91,7 +65,7 @@ public class ValidaCpf {
 
     }
 
-    public static boolean stateAndCpf(String cpf, String estado) {
+    public boolean stateAndCpf(String cpf, String estado) {
 
         try {
             if (estado.length() != 2) {
