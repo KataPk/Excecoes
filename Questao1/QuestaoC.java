@@ -14,13 +14,13 @@ public class QuestaoC {
         ValidaCadastro validaCadastro = new ValidaCadastro();
         boolean invalido = true;
         Scanner sc = new Scanner(System.in);
-        String dataNasc = "";
-        String nome = "";
-        String email = "";
-        String telefone = "";
-        String placa = "";
-        String modelo = "";
-        String marca = "";
+        String dataNasc;
+        String nome;
+        String email;
+        String telefone;
+        String placa;
+        String modelo;
+        String marca;
         while (invalido) {
 
             try {
